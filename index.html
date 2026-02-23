@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Joe Evans</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #0b0b0b;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; transition: 0.3s; }
+    a:hover { color: #c9a227; }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 24px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
+    }
+
+    nav .logo {
+      font-weight: 900;
+      letter-spacing: 6px;
+      font-size: 14px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 28px;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0b0b0b url('dad-bg.png') center/cover no-repeat;
+      overflow: hidden;
+    }
+
+    .hero-image {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 5;
+    }
+
+    .hero-image img {
+      height: 90vh;
+      width: auto;
+      object-fit: contain;
+      transform: scale(1.05);
+      filter:
+        drop-shadow(0 0 30px rgba(201,162,39,1))
+        drop-shadow(0 0 80px rgba(201,162,39,0.7))
+        drop-shadow(0 0 150px rgba(201,162,39,0.4));
+    }
+
+    /* CENTERED HERO NAME */
+    .hero-text {
+      position: absolute;
+      bottom: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      text-align: center;
+    }
+
+    .name {
+      font-weight: 900;
+      font-size: 56px;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      color: #ffffff;
+      text-align: center;
+      text-shadow:
+        0 0 12px rgba(255,255,255,0.9),
+        0 0 35px rgba(201,162,39,0.9),
+        0 0 70px rgba(201,162,39,0.6);
+    }
+
+    .content-wrapper {
+      background: #fdfdfd;
+      color: #222;
+    }
+
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .text-block h2 {
+      font-size: 42px;
+      margin-bottom: 25px;
+      font-weight: 700;
+    }
+
+    .text-block p {
+      line-height: 1.8;
+      font-size: 17px;
+      margin-bottom: 20px;
+      color: #444;
+    }
+
+    /* VIDEO SECTION */
+    .video-section {
+      background: #0b0b0b;
+      padding: 100px 40px;
+      text-align: center;
+    }
+
+    .video-section h2 {
+      font-size: 42px;
+      margin-bottom: 60px;
+      letter-spacing: 4px;
+      color: #fff;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .video-grid video {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      transition: 0.3s ease;
+    }
+
+    .video-grid video:hover {
+      transform: scale(1.03);
+    }
+
+    footer {
+      background: #0b0b0b;
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    @media (max-width: 900px) {
+      nav { padding: 20px; flex-direction: column; gap: 10px; background: rgba(0,0,0,0.95); }
+      nav ul { gap: 15px; flex-wrap: wrap; justify-content: center; }
+      .name { font-size: 32px; letter-spacing: 4px; }
+      .section { grid-template-columns: 1fr; padding: 60px 20px; }
+      .video-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-image img { height: 75vh; transform: scale(1.05); }
+      .hero-text { bottom: 40px; }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">DR. JOE EVANS</div>
+    <ul>
+      <li><a href="#home">HOME</a></li>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#videos">VIDEOS</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero" id="home">
+    <div class="hero-image">
+      <img src="dad-main1.png" alt="Dr. Joe Evans">
+    </div>
+    <div class="hero-text">
+      <div class="name">DR. JOE EVANS</div>
+    </div>
+  </section>
+
+  <div class="content-wrapper">
+
+    <section class="section" id="about">
+      <div class="text-block">
+        <h2>About</h2>
+
+        <p>Dr. Joe Evans, a proud native of Baltimore, Maryland, was raised by a single mother alongside his sibling, shaping his deep appreciation for perseverance, equity, and community. With a lifelong commitment to education and service, Dr. Evans has cultivated an impactful career spanning over two decades as a teacher, instructional leader, administrator, and advocate for student achievement and innovation.</p>
+
+        <p>A veteran educator and U.S. Army servicemember, Dr. Evans combines discipline and strategic thinking with compassion and cultural responsiveness. He earned his Doctorate in Educational Leadership from Walden University in 2024, building upon a Master’s in Applied Educational Technology from Wilmington University and a Bachelor of Science in Mathematics from Fayetteville State University. He holds Delaware certifications in mathematics instruction and school leadership.</p>
+
+        <p>Dr. Evans currently serves as the Principal of the Middle School of Innovation in the Capital School District, where he led the planning and launch of the district's newest school in 2023. His visionary leadership has included previous administrative roles and instructional positions across multiple Delaware districts. As co-founder of Results Tutoring, LLC, Dr. Evans has empowered students statewide through academic interventions and test preparation.</p>
+
+        <p>He lives in Bear, Delaware, with his wife, Kelly, and their three children: Bria, Tobais, and Trinity. Driven by faith, family, and service, Dr. Evans remains committed to creating equitable, future-focused learning environments that uplift every student.</p>
+      </div>
+
+      <div class="text-block">
+        <img src="dad1.png" alt="Dr. Joe Evans" style="width: 100%; border-radius: 12px; box-shadow: 15px 15px 0px #c9a227;">
+      </div>
+    </section>
+
+  </div>
+
+  <section class="video-section" id="videos">
+    <h2>VIDEO SHORTS</h2>
+    <div class="video-grid">
+      <video controls><source src="dad-clip-1.mp4" type="video/mp4"></video>
+      <video controls><source src="dad-clip-2.mp4" type="video/mp4"></video>
+      <video controls><source src="dad-clip-3.mp4" type="video/mp4"></video>
+      <video controls><source src="dad-clip-4.mp4" type="video/mp4"></video>
+      <video controls><source src="dad-clip-5.mp4" type="video/mp4"></video>
+      <video controls><source src="dad-clip-6.mp4" type="video/mp4"></video>
+      <video controls><source src="Dad-clip-7.mp4" type="video/mp4"></video>
+      <video controls><source src="Dad-clip-8.mp4" type="video/mp4"></video>
+    </div>
+  </section>
+
+  <footer>
+    <p style="letter-spacing: 6px; font-weight: 900;">DR. JOE EVANS</p>
+    <p style="margin-top: 20px; font-size: 12px; opacity: 0.7;">&copy; 2026 Dr. Joe Evans. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
