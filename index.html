@@ -145,7 +145,7 @@
 
     .video-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(2, 1fr); /* bigger videos: 2 columns instead of 4 */
       gap: 30px;
       max-width: 1200px;
       margin: 0 auto;
@@ -153,7 +153,7 @@
 
     .video-grid iframe {
       width: 100%;
-      aspect-ratio: 16 / 9;
+      aspect-ratio: 16 / 9; /* widescreen */
       border-radius: 12px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.6);
       transition: 0.3s ease;
@@ -175,7 +175,7 @@
       nav ul { gap: 15px; flex-wrap: wrap; justify-content: center; }
       .name { font-size: 32px; letter-spacing: 4px; }
       .section { grid-template-columns: 1fr; padding: 60px 20px; }
-      .video-grid { grid-template-columns: repeat(2, 1fr); }
+      .video-grid { grid-template-columns: 1fr; } /* single column on mobile */
       .hero-image img { height: 75vh; transform: scale(1.05); }
       .hero-text { bottom: 40px; }
     }
