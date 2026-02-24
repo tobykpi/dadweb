@@ -127,6 +127,55 @@
       color: #444;
     }
 
+    .booking-section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 100px 40px;
+      text-align: center;
+    }
+
+    .booking-section h2 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    .booking-section p {
+      margin-bottom: 40px;
+      color: #555;
+    }
+
+    .booking-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .booking-form input,
+    .booking-form textarea {
+      padding: 14px;
+      font-family: 'Montserrat', sans-serif;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      width: 100%;
+    }
+
+    .booking-form button {
+      padding: 14px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      letter-spacing: 2px;
+      background: #c9a227;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .booking-form button:hover {
+      background: #a8861c;
+    }
+
     .video-section {
       background: #0b0b0b;
       padding: 100px 40px;
@@ -187,6 +236,7 @@
       <li><a href="#home">HOME</a></li>
       <li><a href="#about">ABOUT</a></li>
       <li><a href="#videos">VIDEOS</a></li>
+      <li><a href="#booking">BOOK</a></li>
     </ul>
   </nav>
 
@@ -201,7 +251,7 @@
 
   <div class="content-wrapper">
 
-    <!-- FULL ABOUT SECTION RESTORED -->
+    <!-- FULL ABOUT SECTION -->
     <section class="section" id="about">
       <div class="text-block">
         <h2>About</h2>
@@ -222,6 +272,7 @@
 
   </div>
 
+  <!-- VIDEO SECTION -->
   <section class="video-section" id="videos">
     <h2>VIDEO SHORTS</h2>
     <div class="video-grid">
@@ -237,6 +288,21 @@
               allowfullscreen></iframe>
 
     </div>
+  </section>
+
+  <!-- BOOKING SECTION MOVED AFTER VIDEOS -->
+  <section class="booking-section" id="booking">
+    <h2>Book a Consultation</h2>
+    <p>Interested in scheduling a consultation? Complete the form below and we will follow up shortly.</p>
+
+    <form class="booking-form" name="booking" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="booking">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="text" name="organization" placeholder="Organization (Optional)">
+      <textarea name="message" rows="5" placeholder="Briefly describe your consultation needs" required></textarea>
+      <button type="submit">SUBMIT REQUEST</button>
+    </form>
   </section>
 
   <footer>
