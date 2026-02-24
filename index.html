@@ -47,11 +47,10 @@
       letter-spacing: 2px;
     }
 
-    /* HERO */
     .hero {
       position: relative;
       width: 100%;
-      height: 110vh; /* increased height */
+      height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -68,17 +67,16 @@
     }
 
     .hero-image img {
-      height: 100vh; /* increased height */
+      height: 90vh;
       width: auto;
       object-fit: contain;
-      transform: scale(1.15); /* slightly bigger */
+      transform: scale(1.05);
       filter:
         drop-shadow(0 0 30px rgba(201,162,39,1))
         drop-shadow(0 0 80px rgba(201,162,39,0.7))
         drop-shadow(0 0 150px rgba(201,162,39,0.4));
     }
 
-    /* CENTERED HERO NAME */
     .hero-text {
       position: absolute;
       bottom: 60px;
@@ -129,7 +127,6 @@
       color: #444;
     }
 
-    /* VIDEO SECTION */
     .video-section {
       background: #0b0b0b;
       padding: 100px 40px;
@@ -145,15 +142,15 @@
 
     .video-grid {
       display: grid;
-      grid-template-columns: 1fr; /* only one video */
+      grid-template-columns: repeat(4, 1fr);
       gap: 30px;
-      max-width: 800px;
+      max-width: 1200px;
       margin: 0 auto;
     }
 
     .video-grid iframe {
       width: 100%;
-      aspect-ratio: 16 / 9;
+      aspect-ratio: 9 / 16;
       border-radius: 12px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.6);
       transition: 0.3s ease;
@@ -175,11 +172,10 @@
       nav ul { gap: 15px; flex-wrap: wrap; justify-content: center; }
       .name { font-size: 32px; letter-spacing: 4px; }
       .section { grid-template-columns: 1fr; padding: 60px 20px; }
-      .video-grid { grid-template-columns: 1fr; } 
-      .hero-image img { height: 85vh; transform: scale(1.15); }
+      .video-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-image img { height: 75vh; transform: scale(1.05); }
       .hero-text { bottom: 40px; }
     }
-
   </style>
 </head>
 
@@ -205,7 +201,7 @@
 
   <div class="content-wrapper">
 
-    <section class="section" id="about">
+  <section class="section" id="about">
       <div class="text-block">
         <h2>About</h2>
 
@@ -226,14 +222,49 @@
   </div>
 
   <section class="video-section" id="videos">
-    <h2>VIDEO SHORTS</h2>
-    <div class="video-grid">
-      <iframe src="https://player.vimeo.com/video/1167491307" 
-              frameborder="0" 
-              allow="autoplay; fullscreen; picture-in-picture" 
-              allowfullscreen></iframe>
-    </div>
-  </section>
+  <h2>VIDEO SHORTS</h2>
+  <div class="video-grid">
+    <iframe src="https://player.vimeo.com/video/1167491173" 
+            frameborder="0" 
+            allow="autoplay; fullscreen; picture-in-picture" 
+            allowfullscreen></iframe>
+
+    <iframe src="https://player.vimeo.com/video/1167491307" 
+            frameborder="0" 
+            allow="autoplay; fullscreen; picture-in-picture" 
+            allowfullscreen></iframe>
+
+    <iframe src="https://player.vimeo.com/video/1167491369" 
+            frameborder="0" 
+            allow="autoplay; fullscreen; picture-in-picture" 
+            allowfullscreen></iframe>
+
+    <iframe src="https://player.vimeo.com/video/1167491455" 
+            frameborder="0" 
+            allow="autoplay; fullscreen; picture-in-picture" 
+            allowfullscreen></iframe>
+
+    <iframe src="https://player.vimeo.com/video/1167491529" 
+            frameborder="0" 
+            allow="autoplay; fullscreen; picture-in-picture" 
+            allowfullscreen></iframe>
+
+    <iframe src="https://player.vimeo.com/video/1167491615" 
+            frameborder="0" 
+            allow="autoplay; fullscreen; picture-in-picture" 
+            allowfullscreen></iframe>
+
+    <iframe src="https://player.vimeo.com/video/1167491657" 
+            frameborder="0" 
+            allow="autoplay; fullscreen; picture-in-picture" 
+            allowfullscreen></iframe>
+
+    <iframe src="https://player.vimeo.com/video/1167491695" 
+            frameborder="0" 
+            allow="autoplay; fullscreen; picture-in-picture" 
+            allowfullscreen></iframe>
+  </div>
+</section>
 
   <footer>
     <p style="letter-spacing: 6px; font-weight: 900;">DR. JOE EVANS</p>
