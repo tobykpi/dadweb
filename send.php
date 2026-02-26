@@ -1,27 +1,309 @@
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Joe Evans</title>
 
-  $name = htmlspecialchars($_POST['name']);
-  $email = htmlspecialchars($_POST['email']);
-  $organization = htmlspecialchars($_POST['organization']);
-  $message = htmlspecialchars($_POST['message']);
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
 
-  $to = "info@drjoeevans.com";
-  $subject = "New Consultation Request - DrJoeEvans.com";
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
-  $body = "You have received a new consultation request:\n\n";
-  $body .= "Name: $name\n";
-  $body .= "Email: $email\n";
-  $body .= "Organization: $organization\n\n";
-  $body .= "Message:\n$message";
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #0b0b0b;
+      color: #fff;
+      overflow-x: hidden;
+    }
 
-  $headers = "From: info@drjoeevans.com\r\n";
-  $headers .= "Reply-To: $email\r\n";
+    a { text-decoration: none; color: inherit; transition: 0.3s; }
+    a:hover { color: #c9a227; }
 
-  if (mail($to, $subject, $body, $headers)) {
-      echo "Message sent successfully.";
-  } else {
-      echo "Message failed to send.";
-  }
-}
-?>
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 24px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
+    }
+
+    nav .logo {
+      font-weight: 900;
+      letter-spacing: 6px;
+      font-size: 14px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 28px;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0b0b0b url('dad-bg.png') center/cover no-repeat;
+      overflow: hidden;
+    }
+
+    .hero-image {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 5;
+    }
+
+    .hero-image img {
+      height: 90vh;
+      width: auto;
+      object-fit: contain;
+      transform: scale(1.05);
+      filter:
+        drop-shadow(0 0 30px rgba(201,162,39,1))
+        drop-shadow(0 0 80px rgba(201,162,39,0.7))
+        drop-shadow(0 0 150px rgba(201,162,39,0.4));
+    }
+
+    .hero-text {
+      position: absolute;
+      bottom: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      text-align: center;
+    }
+
+    .name {
+      font-weight: 900;
+      font-size: 56px;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      color: #ffffff;
+      text-align: center;
+      text-shadow:
+        0 0 12px rgba(255,255,255,0.9),
+        0 0 35px rgba(201,162,39,0.9),
+        0 0 70px rgba(201,162,39,0.6);
+    }
+
+    .content-wrapper {
+      background: #fdfdfd;
+      color: #222;
+    }
+
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .text-block h2 {
+      font-size: 42px;
+      margin-bottom: 25px;
+      font-weight: 700;
+    }
+
+    .text-block p {
+      line-height: 1.8;
+      font-size: 17px;
+      margin-bottom: 20px;
+      color: #444;
+    }
+
+    .booking-section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 100px 40px;
+      text-align: center;
+    }
+
+    .booking-section h2 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    .booking-section p {
+      margin-bottom: 40px;
+      color: #555;
+    }
+
+    .booking-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .booking-form input,
+    .booking-form textarea {
+      padding: 14px;
+      font-family: 'Montserrat', sans-serif;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      width: 100%;
+    }
+
+    .booking-form button {
+      padding: 14px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      letter-spacing: 2px;
+      background: #c9a227;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .booking-form button:hover {
+      background: #a8861c;
+    }
+
+    .video-section {
+      background: #0b0b0b;
+      padding: 100px 40px;
+      text-align: center;
+    }
+
+    .video-section h2 {
+      font-size: 42px;
+      margin-bottom: 60px;
+      letter-spacing: 4px;
+      color: #fff;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .video-grid iframe {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      transition: 0.3s ease;
+    }
+
+    .video-grid iframe:hover {
+      transform: scale(1.03);
+    }
+
+    footer {
+      background: #0b0b0b;
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .linkedin-button {
+      display: inline-block;
+      margin-bottom: 25px;
+      padding: 12px 24px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      background-color: #0077b5;
+      color: #fff;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    .linkedin-button:hover {
+      background-color: #005983;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">DR. JOE EVANS</div>
+    <ul>
+      <li><a href="#home">HOME</a></li>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#videos">VIDEOS</a></li>
+      <li><a href="#booking">BOOK</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero" id="home">
+    <div class="hero-image">
+      <img src="dad-main1.png" alt="Dr. Joe Evans">
+    </div>
+    <div class="hero-text">
+      <div class="name">DR. JOE EVANS</div>
+    </div>
+  </section>
+
+  <div class="content-wrapper">
+    <section class="section" id="about">
+      <div class="text-block">
+        <h2>About</h2>
+
+        <p>Dr. Joe Evans, a proud native of Baltimore, Maryland, was raised by a single mother alongside his sibling, shaping his deep appreciation for perseverance, equity, and community. With a lifelong commitment to education and service, Dr. Evans has cultivated an impactful career spanning over two decades as a teacher, instructional leader, administrator, and advocate for student achievement and innovation.</p>
+
+        <p>A veteran educator and U.S. Army servicemember, Dr. Evans combines discipline and strategic thinking with compassion and cultural responsiveness. He earned his Doctorate in Educational Leadership from Walden University in 2024, building upon a Master’s in Applied Educational Technology from Wilmington University and a Bachelor of Science in Mathematics from Fayetteville State University. He holds Delaware certifications in mathematics instruction and school leadership.</p>
+
+        <p>Dr. Evans currently serves as the Principal of the Middle School of Innovation in the Capital School District, where he led the planning and launch of the district's newest school in 2023. His visionary leadership has included previous administrative roles and instructional positions across multiple Delaware districts. As co-founder of Results Tutoring, LLC, Dr. Evans has empowered students statewide through academic interventions and test preparation.</p>
+
+        <p>He lives in Bear, Delaware, with his wife, Kelly, and their three children: Bria, Tobais, and Trinity. Driven by faith, family, and service, Dr. Evans remains committed to creating equitable, future-focused learning environments that uplift every student.</p>
+
+      </div>
+
+      <div class="text-block">
+        <img src="dad1.png" alt="Dr. Joe Evans" style="width: 100%; border-radius: 12px; box-shadow: 15px 15px 0px #c9a227;">
+      </div>
+    </section>
+  </div>
+
+  <section class="video-section" id="videos">
+    <h2>VIDEO SHORTS</h2>
+    <div class="video-grid">
+      <iframe src="https://www.youtube.com/embed/bmZzSqFpkPY" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/xLhSVzfr_jo" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section class="booking-section" id="booking">
+    <h2>Book a Consultation</h2>
+    <p>Interested in scheduling a consultation? Complete the form below and we will follow up shortly.</p>
+
+    <form name="booking" method="POST" data-netlify="true" class="booking-form">
+      <input type="hidden" name="form-name" value="booking">
+
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Your Email Address" required>
+      <input type="text" name="organization" placeholder="Organization (Optional)">
+      <textarea name="message" rows="5" placeholder="Briefly describe your consultation needs" required></textarea>
+      <button type="submit">SUBMIT REQUEST</button>
+    </form>
+  </section>
+
+  <footer>
+    <a href="https://www.linkedin.com/in/dr-joe-evans-7958a165" target="_blank" class="linkedin-button">LinkedIn</a>
+    <p style="letter-spacing: 6px; font-weight: 900;">DR. JOE EVANS</p>
+    <p style="margin-top: 20px; font-size: 12px; opacity: 0.7;">© 2026 Dr. Joe Evans. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
