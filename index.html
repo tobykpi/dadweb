@@ -216,34 +216,20 @@
       padding: 60px 20px;
     }
 
-    /* LinkedIn button styling */
     .linkedin-button {
       display: inline-block;
-      margin-top: 15px;
+      margin-bottom: 25px;
       padding: 12px 24px;
       font-weight: 700;
       letter-spacing: 2px;
       background-color: #0077b5;
       color: #fff;
-      border: none;
       border-radius: 6px;
-      cursor: pointer;
       transition: 0.3s;
-      text-decoration: none;
     }
 
     .linkedin-button:hover {
       background-color: #005983;
-    }
-
-    @media (max-width: 900px) {
-      nav { padding: 20px; flex-direction: column; gap: 10px; background: rgba(0,0,0,0.95); }
-      nav ul { gap: 15px; flex-wrap: wrap; justify-content: center; }
-      .name { font-size: 32px; letter-spacing: 4px; }
-      .section { grid-template-columns: 1fr; padding: 60px 20px; }
-      .video-grid { grid-template-columns: 1fr; }
-      .hero-image img { height: 75vh; transform: scale(1.05); }
-      .hero-text { bottom: 40px; }
     }
   </style>
 </head>
@@ -270,8 +256,6 @@
   </section>
 
   <div class="content-wrapper">
-
-    <!-- FULL ABOUT SECTION -->
     <section class="section" id="about">
       <div class="text-block">
         <h2>About</h2>
@@ -283,42 +267,30 @@
         <p>Dr. Evans currently serves as the Principal of the Middle School of Innovation in the Capital School District, where he led the planning and launch of the district's newest school in 2023. His visionary leadership has included previous administrative roles and instructional positions across multiple Delaware districts. As co-founder of Results Tutoring, LLC, Dr. Evans has empowered students statewide through academic interventions and test preparation.</p>
 
         <p>He lives in Bear, Delaware, with his wife, Kelly, and their three children: Bria, Tobais, and Trinity. Driven by faith, family, and service, Dr. Evans remains committed to creating equitable, future-focused learning environments that uplift every student.</p>
+
       </div>
 
       <div class="text-block">
         <img src="dad1.png" alt="Dr. Joe Evans" style="width: 100%; border-radius: 12px; box-shadow: 15px 15px 0px #c9a227;">
       </div>
     </section>
-
   </div>
 
-  <!-- VIDEO SECTION -->
   <section class="video-section" id="videos">
     <h2>VIDEO SHORTS</h2>
     <div class="video-grid">
-
-      <iframe src="https://www.youtube.com/embed/bmZzSqFpkPY?feature=share"
-              frameborder="0"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowfullscreen></iframe>
-
-      <iframe src="https://www.youtube.com/embed/xLhSVzfr_jo?feature=share"
-              frameborder="0"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowfullscreen></iframe>
-
+      <iframe src="https://www.youtube.com/embed/bmZzSqFpkPY" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/xLhSVzfr_jo" allowfullscreen></iframe>
     </div>
   </section>
 
-  <!-- BOOKING SECTION MOVED AFTER VIDEOS -->
   <section class="booking-section" id="booking">
     <h2>Book a Consultation</h2>
     <p>Interested in scheduling a consultation? Complete the form below and we will follow up shortly.</p>
 
-    <form class="booking-form" name="booking" method="POST" data-netlify="true">
-      <input type="hidden" name="form-name" value="booking">
+    <form class="booking-form" action="send.php" method="POST">
       <input type="text" name="name" placeholder="Full Name" required>
-      <input type="email" name="email" placeholder="Email Address" value="info@drjoeevans.com" required>
+      <input type="email" name="email" placeholder="Your Email Address" required>
       <input type="text" name="organization" placeholder="Organization (Optional)">
       <textarea name="message" rows="5" placeholder="Briefly describe your consultation needs" required></textarea>
       <button type="submit">SUBMIT REQUEST</button>
@@ -326,9 +298,9 @@
   </section>
 
   <footer>
-    <p style="letter-spacing: 6px; font-weight: 900;">DR. JOE EVANS</p>
-    <p style="margin-top: 20px; font-size: 12px; opacity: 0.7;">&copy; 2026 Dr. Joe Evans. All Rights Reserved.</p>
     <a href="https://www.linkedin.com/in/dr-joe-evans-7958a165" target="_blank" class="linkedin-button">LinkedIn</a>
+    <p style="letter-spacing: 6px; font-weight: 900;">DR. JOE EVANS</p>
+    <p style="margin-top: 20px; font-size: 12px; opacity: 0.7;">© 2026 Dr. Joe Evans. All Rights Reserved.</p>
   </footer>
 
 </body>
