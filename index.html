@@ -339,12 +339,35 @@ nav ul{
   box-shadow:0 25px 60px rgba(0,0,0,0.35);
 }
 
-.coming-soon{
+.book-link{
+  display:inline-block;
   margin-top:25px;
   font-weight:700;
   letter-spacing:4px;
   color:#c9a227;
   font-size:18px;
+}
+
+.book-link:hover{
+  color:#a8861c;
+}
+
+.buy-now-btn{
+  display:inline-block;
+  margin-top:22px;
+  padding:14px 34px;
+  background:#c9a227;
+  color:#fff;
+  font-weight:700;
+  letter-spacing:2px;
+  border-radius:6px;
+  box-shadow:0 12px 30px rgba(201,162,39,0.28);
+}
+
+.buy-now-btn:hover{
+  background:#a8861c;
+  color:#fff;
+  transform:translateY(-2px);
 }
 
 /* CONSULT SECTION */
@@ -614,8 +637,12 @@ footer{
   <p class="book-copy">Explore the featured book and stay connected for more from Dr. Joe Evans.</p>
 
   <div class="book-cover">
-    <img src="dad-book.PNG" alt="From the Hood to the Hood">
-    <p class="coming-soon">COMING SOON</p>
+    <a href="https://www.amazon.com/dp/B0GT3QD95L?ref=cm_sw_r_ffobk_cso_sms_mwn_dp_6RK9XE22MDV54T2H13J6_1&ref_=cm_sw_r_ffobk_cso_sms_mwn_dp_6RK9XE22MDV54T2H13J6_1&social_share=cm_sw_r_ffobk_cso_sms_mwn_dp_6RK9XE22MDV54T2H13J6_1&bestFormat=true" target="_blank">
+      <img src="dad-book.PNG" alt="From the Hood to the Hood">
+    </a>
+    <a class="book-link" href="https://www.amazon.com/dp/B0GT3QD95L?ref=cm_sw_r_ffobk_cso_sms_mwn_dp_6RK9XE22MDV54T2H13J6_1&ref_=cm_sw_r_ffobk_cso_sms_mwn_dp_6RK9XE22MDV54T2H13J6_1&social_share=cm_sw_r_ffobk_cso_sms_mwn_dp_6RK9XE22MDV54T2H13J6_1&bestFormat=true" target="_blank">OUT NOW</a>
+    <br>
+    <a class="buy-now-btn" href="https://www.amazon.com/dp/B0GT3QD95L?ref=cm_sw_r_ffobk_cso_sms_mwn_dp_6RK9XE22MDV54T2H13J6_1&ref_=cm_sw_r_ffobk_cso_sms_mwn_dp_6RK9XE22MDV54T2H13J6_1&social_share=cm_sw_r_ffobk_cso_sms_mwn_dp_6RK9XE22MDV54T2H13J6_1&bestFormat=true" target="_blank">BUY NOW</a>
   </div>
 </section>
 
