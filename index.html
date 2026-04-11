@@ -478,6 +478,10 @@ footer{
     height:100dvh;
   }
 
+  .hero-image{
+    bottom:calc(-20px - env(safe-area-inset-bottom));
+  }
+
   nav{
     padding:20px;
     flex-direction:column;
@@ -505,13 +509,15 @@ footer{
   }
 
   .hero-image img{
-    height:88vh;
-    height:88svh;
-    height:88dvh;
+    width:min(112vw, 470px);
+    max-width:none;
+    height:auto;
+    transform:scale(1.08);
+    transform-origin:center bottom;
   }
 
   .hero-text{
-    bottom:calc(24px + env(safe-area-inset-bottom));
+    bottom:calc(18px + env(safe-area-inset-bottom));
   }
 
   .video-section,
