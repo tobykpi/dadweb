@@ -479,7 +479,13 @@ footer{
   }
 
   .hero-image{
-    bottom:calc(-20px - env(safe-area-inset-bottom));
+    inset:0;
+    left:0;
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    overflow:hidden;
+    transform:none;
   }
 
   nav{
@@ -509,11 +515,10 @@ footer{
   }
 
   .hero-image img{
-    width:min(112vw, 470px);
+    width:clamp(500px, 136vw, 560px);
     max-width:none;
     height:auto;
-    transform:scale(1.08);
-    transform-origin:center bottom;
+    transform:none;
   }
 
   .hero-text{
