@@ -339,19 +339,6 @@ nav ul{
   box-shadow:0 25px 60px rgba(0,0,0,0.35);
 }
 
-.book-link{
-  display:inline-block;
-  margin-top:25px;
-  font-weight:700;
-  letter-spacing:4px;
-  color:#c9a227;
-  font-size:18px;
-}
-
-.book-link:hover{
-  color:#a8861c;
-}
-
 .buy-now-btn{
   display:inline-block;
   margin-top:22px;
@@ -368,6 +355,18 @@ nav ul{
   background:#a8861c;
   color:#fff;
   transform:translateY(-2px);
+}
+
+.book-actions{
+  margin-top:22px;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:14px;
+}
+
+.book-actions .buy-now-btn{
+  margin-top:0;
 }
 
 /* CONSULT SECTION */
@@ -656,12 +655,13 @@ footer{
   <p class="book-copy">Explore the featured book and stay connected for more from Dr. Joe Evans.</p>
 
   <div class="book-cover">
-    <a href="https://www.amazon.com/dp/B0GT3QD95L?ref=cm_sw_r_ffobk_cso_sms_mwn_dp_6RK9XE22MDV54T2H13J6_1&ref_=cm_sw_r_ffobk_cso_sms_mwn_dp_6RK9XE22MDV54T2H13J6_1&social_share=cm_sw_r_ffobk_cso_sms_mwn_dp_6RK9XE22MDV54T2H13J6_1&bestFormat=true" target="_blank">
+    <a href="https://www.barnesandnoble.com/w/from-the-hood-to-the-hood-dr-joe-evans/1150070098?ean=9798256345099" target="_blank">
       <img src="dad-book.PNG" alt="From the Hood to the Hood">
     </a>
-    <a class="book-link" href="https://www.amazon.com/dp/B0GT3QD95L?ref=cm_sw_r_ffobk_cso_sms_mwn_dp_6RK9XE22MDV54T2H13J6_1&ref_=cm_sw_r_ffobk_cso_sms_mwn_dp_6RK9XE22MDV54T2H13J6_1&social_share=cm_sw_r_ffobk_cso_sms_mwn_dp_6RK9XE22MDV54T2H13J6_1&bestFormat=true" target="_blank">OUT NOW</a>
-    <br>
-    <a class="buy-now-btn" href="https://www.amazon.com/dp/B0GT3QD95L?ref=cm_sw_r_ffobk_cso_sms_mwn_dp_6RK9XE22MDV54T2H13J6_1&ref_=cm_sw_r_ffobk_cso_sms_mwn_dp_6RK9XE22MDV54T2H13J6_1&social_share=cm_sw_r_ffobk_cso_sms_mwn_dp_6RK9XE22MDV54T2H13J6_1&bestFormat=true" target="_blank">BUY NOW</a>
+    <div class="book-actions">
+      <a class="buy-now-btn" href="https://www.barnesandnoble.com/w/from-the-hood-to-the-hood-dr-joe-evans/1150070098?ean=9798256345099" target="_blank">BARNES &amp; NOBLE</a>
+      <a class="buy-now-btn" href="https://a.co/d/0gWJdvTo" target="_blank">AMAZON</a>
+    </div>
   </div>
 </section>
 
