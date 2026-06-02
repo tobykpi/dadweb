@@ -390,6 +390,14 @@ nav ul{
   line-height:1.8;
 }
 
+.consult-phone{
+  display:inline-block;
+  margin-bottom:34px;
+  color:#c9a227;
+  font-weight:700;
+  letter-spacing:2px;
+}
+
 .consult-form{
   display:flex;
   flex-direction:column;
@@ -445,6 +453,18 @@ footer{
 
 .linkedin-button:hover{
   background:#005983;
+  color:#fff;
+}
+
+.footer-phone{
+  display:inline-block;
+  margin:0 0 22px;
+  color:#c9a227;
+  font-weight:700;
+  letter-spacing:2px;
+}
+
+.footer-phone:hover{
   color:#fff;
 }
 
@@ -645,8 +665,18 @@ footer{
   <p class="intro">Watch featured short-form content highlighting Dr. Joe Evans’ voice, message, and impact.</p>
 
   <div class="video-grid">
-    <iframe src="https://www.youtube.com/embed/bmZzSqFpkPY?feature=share" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/xLhSVzfr_jo?feature=share" allowfullscreen></iframe>
+    <iframe
+      src="https://www.youtube.com/embed/bmZzSqFpkPY"
+      title="Dr. Joe Evans video short"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen></iframe>
+    <iframe
+      src="https://www.youtube.com/embed/xLhSVzfr_jo"
+      title="Dr. Joe Evans video short"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen></iframe>
   </div>
 </section>
 
@@ -670,6 +700,8 @@ footer{
 
   <p>Interested in scheduling a consultation? Complete the form below and we will follow up shortly.</p>
 
+  <a class="consult-phone" href="tel:3025592200">(302) 559-2200</a>
+
   <form class="consult-form" action="https://formspree.io/f/xwvnjyaw" method="POST">
 
     <input type="hidden" name="_redirect" value="https://drjoeevans.com/thank-you.html">
@@ -689,6 +721,8 @@ footer{
 
 <footer>
   <a href="https://www.linkedin.com/in/dr-joe-evans-7958a165" target="_blank" class="linkedin-button">LinkedIn</a>
+
+  <a class="footer-phone" href="tel:3025592200">(302) 559-2200</a>
 
   <p style="letter-spacing:6px;font-weight:900;">DR. JOE EVANS</p>
 
