@@ -418,8 +418,17 @@ nav ul{
   line-height:1.8;
 }
 
+.book-grid{
+  max-width:900px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:56px;
+  align-items:start;
+}
+
 .book-cover{
-  max-width:420px;
+  max-width:380px;
   margin:0 auto;
 }
 
@@ -650,6 +659,11 @@ footer{
 
 @media(max-width:640px){
 
+  .book-grid{
+    grid-template-columns:1fr;
+    gap:56px;
+  }
+
   .about-gallery{
     grid-template-columns:1fr;
   }
@@ -718,13 +732,13 @@ footer{
       <div class="about-text">
         <h2 class="section-title">About</h2>
 
-        <p>Dr. Joe Evans, a proud native of Baltimore, Maryland, was raised by a single mother alongside his sibling, shaping his deep appreciation for perseverance, equity, and community. With a lifelong commitment to education and service, Dr. Evans has cultivated an impactful career spanning over two decades as a teacher, instructional leader, administrator, and advocate for student achievement and innovation.</p>
+        <p>Dr. Joe Evans, a proud native of Baltimore, Maryland, was raised by a single mother alongside his sibling, an upbringing that instilled in him a profound appreciation for perseverance, equity, and community. Guided by a lifelong commitment to education and service, Dr. Evans has built an impactful career spanning more than two decades as a math teacher, instructional leader, administrator, and advocate for student achievement and innovation. He is also the author of <em>From the Hood to the Hood</em>, a powerful memoir chronicling his journey from the inner city of Baltimore to earning his doctoral hood in Educational Leadership, and author of <em>Conquer Math Conquer Fear: The Focus-Driven Playbook for Turning Math Anxiety Into Math Achievement</em>. Dr. Evans is a veteran paratrooper of the U.S. Army 82nd Airborne Division.</p>
 
-        <p>A veteran educator and U.S. Army servicemember, Dr. Evans combines discipline and strategic thinking with compassion and cultural responsiveness. He earned his Doctorate in Educational Leadership from Walden University in 2024, building upon a Master’s in Applied Educational Technology from Wilmington University and a Bachelor of Science in Mathematics from Fayetteville State University. He holds Delaware certifications in mathematics instruction and school leadership.</p>
+        <p>Dr. Evans blends discipline, strategic thinking, and servant leadership with compassion and cultural responsiveness. He earned his Doctorate in Educational Leadership from Walden University in 2024, building upon a Master’s degree in Applied Educational Technology from Wilmington University and a Bachelor of Science in Mathematics from Fayetteville State University. He also holds Delaware certifications in mathematics instruction and school leadership.</p>
 
-        <p>Dr. Evans currently serves as the Principal of the Middle School of Innovation in the Capital School District, where he led the planning and launch of the district's newest school in 2023. His visionary leadership has included previous administrative roles and instructional positions across multiple Delaware districts. As co-founder of Results Tutoring, LLC, Dr. Evans has empowered students statewide through academic interventions and test preparation.</p>
+        <p>Dr. Evans is currently restructuring Capital School District’s Senator Step Up Program to better support students receiving special education services through strong administrative leadership and collaboration. He was the former Principal of the Middle School of Innovation (Capital School District), where he successfully led the planning and launch of the district’s newest school in 2023. His visionary leadership includes previous administrative and instructional roles across multiple Delaware school districts. In addition, as co-founder of Results Tutoring, LLC, Dr. Evans has helped empower students statewide through academic interventions and test preparation programs. He is a Doctoral Principalship Fellow at Walden University, where he trains aspiring leaders how to be instructional leaders, school administrators, and principals.</p>
 
-        <p>He lives in Bear, Delaware, with his wife, Kelly, and their three children: Bria, Tobais, and Trinity. Driven by faith, family, and service, Dr. Evans remains committed to creating equitable, future-focused learning environments that uplift every student.</p>
+        <p>Dr. Evans resides in Bear, Delaware, with his wife, Kelly, and their children, Bria, Tobais, and Trinity. Driven by faith, family, and service, he remains deeply committed to creating equitable, future-focused learning environments that inspire, empower, and uplift every student.</p>
       </div>
 
       <div class="about-gallery">
@@ -801,15 +815,26 @@ footer{
 </section>
 
 <section class="book-section" id="book">
-  <h2>BOOK</h2>
-  <p class="book-copy">Explore the featured book and stay connected for more from Dr. Joe Evans.</p>
+  <h2>BOOKS</h2>
+  <p class="book-copy">Explore books by Dr. Joe Evans and stay connected for more.</p>
 
-  <div class="book-cover">
-    <a href="https://www.barnesandnoble.com/w/from-the-hood-to-the-hood-dr-joe-evans/1150070098?ean=9798256345099" target="_blank">
-      <img src="dad-book.PNG" alt="From the Hood to the Hood">
-    </a>
-    <div class="book-actions">
-      <a class="buy-now-btn" href="https://www.barnesandnoble.com/w/from-the-hood-to-the-hood-dr-joe-evans/1150070098?ean=9798256345099" target="_blank">BARNES &amp; NOBLE</a>
+  <div class="book-grid">
+    <div class="book-cover">
+      <a href="https://www.barnesandnoble.com/w/from-the-hood-to-the-hood-dr-joe-evans/1150070098?ean=9798256345099" target="_blank" rel="noopener noreferrer">
+        <img src="dad-book.PNG" alt="From the Hood to the Hood by Dr. Joe Evans">
+      </a>
+      <div class="book-actions">
+        <a class="buy-now-btn" href="https://www.barnesandnoble.com/w/from-the-hood-to-the-hood-dr-joe-evans/1150070098?ean=9798256345099" target="_blank" rel="noopener noreferrer">BARNES &amp; NOBLE</a>
+      </div>
+    </div>
+
+    <div class="book-cover">
+      <a href="https://www.barnesandnoble.com/w/conquer-math-conquer-fear-dr-joe-evans/1151122826?ean=9798995163022" target="_blank" rel="noopener noreferrer">
+        <img src="conquer-math-conquer-fear.jpg" alt="Conquer Math, Conquer Fear by Dr. Joe Evans">
+      </a>
+      <div class="book-actions">
+        <a class="buy-now-btn" href="https://www.barnesandnoble.com/w/conquer-math-conquer-fear-dr-joe-evans/1151122826?ean=9798995163022" target="_blank" rel="noopener noreferrer">BARNES &amp; NOBLE</a>
+      </div>
     </div>
   </div>
 </section>
