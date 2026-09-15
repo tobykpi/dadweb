@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Joe Evans</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Montserrat',sans-serif;
+  background:#0b0b0b;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+  transition:0.3s;
+}
+
+a:hover{
+  color:#c9a227;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:24px 60px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:100;
+  background:linear-gradient(to bottom,rgba(0,0,0,0.92),rgba(0,0,0,0.55),transparent);
+}
+
+nav .logo{
+  font-weight:900;
+  letter-spacing:6px;
+  font-size:14px;
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:28px;
+  font-size:12px;
+  letter-spacing:2px;
+}
+
+/* HERO */
+
+.hero{
+  position:relative;
+  width:100%;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#0b0b0b url('dad-bg.png') center/cover no-repeat;
+  overflow:hidden;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at center, rgba(201,162,39,0.10), transparent 45%),
+    linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.35));
+  z-index:1;
+}
+
+.hero-image{
+  position:absolute;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:5;
+}
+
+.hero-image img{
+  height:90vh;
+  width:auto;
+  object-fit:contain;
+  transform:scale(1.05);
+  filter:
+    drop-shadow(0 0 30px rgba(201,162,39,1))
+    drop-shadow(0 0 80px rgba(201,162,39,0.7))
+    drop-shadow(0 0 150px rgba(201,162,39,0.35));
+}
+
+.hero-text{
+  position:absolute;
+  bottom:60px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:10;
+  text-align:center;
+  width:100%;
+  padding:0 20px;
+}
+
+.name{
+  font-weight:900;
+  font-size:56px;
+  letter-spacing:8px;
+  text-transform:uppercase;
+  color:#fff;
+  text-shadow:
+    0 0 12px rgba(255,255,255,0.9),
+    0 0 35px rgba(201,162,39,0.9),
+    0 0 70px rgba(201,162,39,0.55);
+}
+
+/* CONTENT */
+
+.content-wrapper{
+  background:#fdfdfd;
+  color:#222;
+}
+
+.section{
+  max-width:1200px;
+  margin:0 auto;
+  padding:100px 40px;
+}
+
+.section-title{
+  font-size:42px;
+  margin-bottom:25px;
+  font-weight:700;
+  color:#111;
+}
+
+/* ABOUT */
+
+.about-layout{
+  display:grid;
+  grid-template-columns:1.15fr 0.85fr;
+  gap:70px;
+  align-items:start;
+}
+
+.about-text{
+  padding-top:10px;
+}
+
+.about-text p{
+  line-height:1.95;
+  font-size:17px;
+  color:#444;
+  margin-bottom:26px;
+}
+
+.about-text p:last-child{
+  margin-bottom:0;
+}
+
+.about-gallery{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  align-items:start;
+}
+
+.photo-card{
+  background:#fff;
+  border-radius:18px;
+  padding:10px;
+  box-shadow:0 18px 50px rgba(0,0,0,0.14);
+  border:1px solid rgba(0,0,0,0.05);
+}
+
+.photo-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+.photo-card.tall{
+  grid-row:span 2;
+}
+
+.photo-card.tall img{
+  height:100%;
+  min-height:520px;
+}
+
+.photo-card.small img{
+  height:250px;
+}
+
+.photo-accent{
+  position:relative;
+}
+
+.photo-accent::after{
+  content:"";
+  position:absolute;
+  inset:-8px;
+  border:2px solid rgba(201,162,39,0.75);
+  border-radius:22px;
+  pointer-events:none;
+}
+
+/* FEATURE STRIP */
+
+.feature-strip-wrap{
+  background:linear-gradient(180deg,#ffffff 0%, #f7f7f7 100%);
+  border-top:1px solid #ececec;
+  border-bottom:1px solid #ececec;
+}
+
+.feature-strip{
+  max-width:1200px;
+  margin:0 auto;
+  padding:35px 40px 55px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.feature-box{
+  background:#fff;
+  border-radius:16px;
+  padding:22px 20px;
+  text-align:center;
+  box-shadow:0 14px 34px rgba(0,0,0,0.08);
+  border:1px solid rgba(0,0,0,0.05);
+}
+
+.feature-box h3{
+  font-size:14px;
+  letter-spacing:2px;
+  color:#c9a227;
+  margin-bottom:10px;
+}
+
+.feature-box p{
+  font-size:15px;
+  color:#555;
+  line-height:1.7;
+}
+
+/* ARTICLE SECTION */
+
+.article-section{
+  background:#ffffff;
+  color:#222;
+  text-align:center;
+  padding:90px 40px 100px;
+}
+
+.article-section h2{
+  font-size:42px;
+  margin-bottom:18px;
+  color:#111;
+}
+
+.article-section p{
+  max-width:780px;
+  margin:0 auto 28px;
+  color:#555;
+  line-height:1.8;
+}
+
+.article-preview{
+  display:grid;
+  grid-template-columns:minmax(260px, 0.85fr) 1.15fr;
+  gap:0;
+  max-width:980px;
+  margin:0 auto;
+  background:#0b0b0b;
+  color:#fff;
+  border:1px solid rgba(201,162,39,0.45);
+  border-radius:8px;
+  overflow:hidden;
+  box-shadow:0 18px 44px rgba(0,0,0,0.16);
+  text-align:left;
+}
+
+.article-preview:hover{
+  color:#fff;
+  transform:translateY(-2px);
+  box-shadow:0 22px 50px rgba(0,0,0,0.22);
+}
+
+.article-preview img{
+  width:100%;
+  height:100%;
+  min-height:320px;
+  object-fit:cover;
+}
+
+.article-preview-content{
+  padding:34px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.article-meta{
+  color:#c9a227;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:2px;
+  margin-bottom:14px;
+  text-transform:uppercase;
+}
+
+.article-preview h3{
+  color:#fff;
+  display:block;
+  font-size:28px;
+  line-height:1.45;
+  margin-bottom:18px;
+}
+
+.article-preview .article-excerpt{
+  color:rgba(255,255,255,0.75);
+  margin:0 0 26px;
+  line-height:1.8;
+}
+
+.article-button{
+  align-self:flex-start;
+  padding:13px 24px;
+  background:#c9a227;
+  color:#fff;
+  font-weight:700;
+  letter-spacing:2px;
+  border-radius:6px;
+}
+
+/* VIDEO SECTION */
+
+.video-section{
+  background:#0b0b0b;
+  padding:100px 40px;
+  text-align:center;
+}
+
+.video-section h2{
+  font-size:42px;
+  margin-bottom:18px;
+  letter-spacing:4px;
+  color:#fff;
+}
+
+.video-section .intro{
+  max-width:760px;
+  margin:0 auto 55px;
+  color:rgba(255,255,255,0.72);
+  line-height:1.8;
+  font-size:15px;
+}
+
+.video-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:30px;
+  max-width:900px;
+  margin:0 auto;
+}
+
+.video-grid iframe{
+  width:100%;
+  aspect-ratio:9/16;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+  transition:0.3s;
+  border:none;
+}
+
+.video-grid iframe:hover{
+  transform:scale(1.03);
+}
+
+/* BOOK SECTION */
+
+.book-section{
+  background:#ffffff;
+  color:#222;
+  text-align:center;
+  padding:100px 40px;
+}
+
+.book-section h2{
+  font-size:42px;
+  margin-bottom:18px;
+}
+
+.book-section p.book-copy{
+  max-width:760px;
+  margin:0 auto 45px;
+  color:#555;
+  line-height:1.8;
+}
+
+.book-grid{
+  max-width:900px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:56px;
+  align-items:start;
+}
+
+.book-cover{
+  max-width:380px;
+  margin:0 auto;
+}
+
+.book-cover img{
+  width:100%;
+  border-radius:12px;
+  box-shadow:0 25px 60px rgba(0,0,0,0.35);
+}
+
+.buy-now-btn{
+  display:inline-block;
+  margin-top:22px;
+  padding:14px 34px;
+  background:#c9a227;
+  color:#fff;
+  font-weight:700;
+  letter-spacing:2px;
+  border-radius:6px;
+  box-shadow:0 12px 30px rgba(201,162,39,0.28);
+}
+
+.buy-now-btn:hover{
+  background:#a8861c;
+  color:#fff;
+  transform:translateY(-2px);
+}
+
+.book-actions{
+  margin-top:22px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+}
+
+.book-actions .buy-now-btn{
+  margin-top:0;
+}
+
+/* CONSULT SECTION */
+
+.consult-section{
+  max-width:800px;
+  margin:0 auto;
+  padding:100px 40px;
+  text-align:center;
+}
+
+.consult-section h2{
+  font-size:42px;
+  margin-bottom:20px;
+  color:#ffffff;
+}
+
+.consult-section p{
+  margin-bottom:40px;
+  color:#ffffff;
+  line-height:1.8;
+}
+
+.consult-phone{
+  display:inline-block;
+  margin-bottom:34px;
+  color:#c9a227;
+  font-weight:700;
+  letter-spacing:2px;
+}
+
+.consult-form{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.consult-form input,
+.consult-form textarea{
+  padding:14px;
+  font-family:'Montserrat',sans-serif;
+  border:1px solid #ccc;
+  border-radius:6px;
+  font-size:14px;
+  width:100%;
+}
+
+.consult-form button{
+  padding:14px;
+  font-family:'Montserrat',sans-serif;
+  font-weight:700;
+  letter-spacing:2px;
+  background:#c9a227;
+  color:white;
+  border:none;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.consult-form button:hover{
+  background:#a8861c;
+}
+
+/* FOOTER */
+
+footer{
+  background:#0b0b0b;
+  color:white;
+  text-align:center;
+  padding:60px 20px;
+}
+
+.linkedin-button{
+  display:inline-block;
+  margin-bottom:25px;
+  padding:12px 24px;
+  font-weight:700;
+  letter-spacing:2px;
+  background:#0077b5;
+  color:#fff;
+  border-radius:6px;
+  transition:0.3s;
+}
+
+.linkedin-button:hover{
+  background:#005983;
+  color:#fff;
+}
+
+.footer-phone{
+  display:inline-block;
+  margin:0 0 22px;
+  color:#c9a227;
+  font-weight:700;
+  letter-spacing:2px;
+}
+
+.footer-phone:hover{
+  color:#fff;
+}
+
+@media(max-width:1000px){
+
+  .about-layout{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+
+  .about-gallery{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .photo-card.tall img{
+    min-height:420px;
+  }
+
+  .feature-strip{
+    grid-template-columns:1fr;
+  }
+
+  .article-preview{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:900px){
+
+  .hero{
+    height:100vh;
+    height:100svh;
+    height:100dvh;
+  }
+
+  .hero-image{
+    inset:0;
+    left:0;
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    overflow:hidden;
+    transform:none;
+  }
+
+  nav{
+    padding:20px;
+    flex-direction:column;
+    gap:10px;
+    background:rgba(0,0,0,0.95);
+  }
+
+  nav ul{
+    gap:15px;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .name{
+    font-size:32px;
+    letter-spacing:4px;
+  }
+
+  .section{
+    padding:70px 20px;
+  }
+
+  .video-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-image img{
+    width:clamp(470px, 128vw, 530px);
+    max-width:none;
+    height:auto;
+    transform:none;
+  }
+
+  .hero-text{
+    bottom:calc(18px + env(safe-area-inset-bottom));
+  }
+
+  .video-section,
+  .article-section,
+  .book-section,
+  .consult-section{
+    padding-left:20px;
+    padding-right:20px;
+  }
+
+}
+
+@media(max-width:640px){
+
+  .book-grid{
+    grid-template-columns:1fr;
+    gap:56px;
+  }
+
+  .about-gallery{
+    grid-template-columns:1fr;
+  }
+
+  .photo-card.tall{
+    grid-row:auto;
+  }
+
+  .photo-card.tall img,
+  .photo-card.small img{
+    min-height:unset;
+    height:auto;
+  }
+
+  .section-title,
+  .article-section h2,
+  .video-section h2,
+  .book-section h2,
+  .consult-section h2{
+    font-size:32px;
+  }
+
+  .article-preview h3{
+    font-size:22px;
+  }
+
+  .article-preview-content{
+    padding:24px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">DR. JOE EVANS</div>
+
+  <ul>
+    <li><a href="#home">HOME</a></li>
+    <li><a href="#about">ABOUT</a></li>
+    <li><a href="#article">ARTICLE</a></li>
+    <li><a href="#videos">VIDEOS</a></li>
+    <li><a href="#book">BOOK</a></li>
+    <li><a href="#consult">CONSULT</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-image">
+    <img src="dad-main1.png" alt="Dr Joe Evans">
+  </div>
+
+  <div class="hero-text">
+    <div class="name">DR. JOE EVANS</div>
+  </div>
+</section>
+
+<div class="content-wrapper">
+
+  <section class="section" id="about">
+    <div class="about-layout">
+
+      <div class="about-text">
+        <h2 class="section-title">About</h2>
+
+        <p>Dr. Joe Evans, a proud native of Baltimore, Maryland, was raised by a single mother alongside his sibling, an upbringing that instilled in him a profound appreciation for perseverance, equity, and community. Guided by a lifelong commitment to education and service, Dr. Evans has built an impactful career spanning more than two decades as a math teacher, instructional leader, administrator, and advocate for student achievement and innovation. He is also the author of <em>From the Hood to the Hood</em>, a powerful memoir chronicling his journey from the inner city of Baltimore to earning his doctoral hood in Educational Leadership, and author of <em>Conquer Math Conquer Fear: The Focus-Driven Playbook for Turning Math Anxiety Into Math Achievement</em>. Dr. Evans is a veteran paratrooper of the U.S. Army 82nd Airborne Division.</p>
+
+        <p>Dr. Evans blends discipline, strategic thinking, and servant leadership with compassion and cultural responsiveness. He earned his Doctorate in Educational Leadership from Walden University in 2024, building upon a Master’s degree in Applied Educational Technology from Wilmington University and a Bachelor of Science in Mathematics from Fayetteville State University. He also holds Delaware certifications in mathematics instruction and school leadership.</p>
+
+        <p>Dr. Evans is currently restructuring Capital School District’s Senator Step Up Program to better support students receiving special education services through strong administrative leadership and collaboration. He was the former Principal of the Middle School of Innovation (Capital School District), where he successfully led the planning and launch of the district’s newest school in 2023. His visionary leadership includes previous administrative and instructional roles across multiple Delaware school districts. In addition, as co-founder of Results Tutoring, LLC, Dr. Evans has helped empower students statewide through academic interventions and test preparation programs. He is a Doctoral Principalship Fellow at Walden University, where he trains aspiring leaders how to be instructional leaders, school administrators, and principals.</p>
+
+        <p>Dr. Evans resides in Bear, Delaware, with his wife, Kelly, and their children, Bria, Tobais, and Trinity. Driven by faith, family, and service, he remains deeply committed to creating equitable, future-focused learning environments that inspire, empower, and uplift every student.</p>
+      </div>
+
+      <div class="about-gallery">
+        <div class="photo-card tall photo-accent">
+          <img src="dad 2.JPG" alt="Dr. Joe Evans portrait">
+        </div>
+
+        <div class="photo-card small">
+          <img src="dad 3.JPG" alt="Dr. Joe Evans professional headshot">
+        </div>
+
+        <div class="photo-card small">
+          <img src="dad 4.JPG" alt="Dr. Joe Evans smiling portrait">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="feature-strip-wrap">
+    <div class="feature-strip">
+      <div class="feature-box">
+        <h3>EDUCATOR</h3>
+        <p>More than two decades of service in education, leadership, and student advocacy.</p>
+      </div>
+
+      <div class="feature-box">
+        <h3>AUTHOR</h3>
+        <p>Sharing insight, experience, and impact through writing that inspires growth and purpose.</p>
+      </div>
+
+      <div class="feature-box">
+        <h3>CONSULTANT</h3>
+        <p>Focused on empowering schools, students, and communities through practical strategy and vision.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<section class="article-section" id="article">
+  <h2>Featured Article</h2>
+  <p>Read the DelawareBlack.com feature on Dr. Joe Evans and his journey of faith, perseverance, and purpose.</p>
+
+  <a class="article-preview" href="https://delawareblack.com/from-east-baltimore-to-educational-leadership-dr-joe-evans-shares-a-journey-of-faith-perseverance-and-purpose/" target="_blank" rel="noopener">
+    <img src="delawareblack-article-preview.jpeg" alt="Preview image for the DelawareBlack.com feature on Dr. Joe Evans">
+    <div class="article-preview-content">
+      <div class="article-meta">DelawareBlack.com &bull; July 14, 2026 &bull; 7 min read</div>
+      <h3>From East Baltimore to Educational Leadership: Dr. Joe Evans Shares a Journey of Faith, Perseverance, and Purpose</h3>
+      <p class="article-excerpt">Dr. Joe Evans overcame the odds to become a Delaware principal, Army veteran, and author. Read how faith, education, and perseverance shaped his remarkable journey.</p>
+      <span class="article-button">READ ARTICLE</span>
+    </div>
+  </a>
+</section>
+
+<section class="video-section" id="videos">
+  <h2>VIDEO SHORTS</h2>
+  <p class="intro">Watch featured short-form content highlighting Dr. Joe Evans’ voice, message, and impact.</p>
+
+  <div class="video-grid">
+    <iframe
+      src="https://www.youtube.com/embed/bmZzSqFpkPY"
+      title="Dr. Joe Evans video short"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen></iframe>
+    <iframe
+      src="https://www.youtube.com/embed/xLhSVzfr_jo"
+      title="Dr. Joe Evans video short"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen></iframe>
+  </div>
+</section>
+
+<section class="book-section" id="book">
+  <h2>BOOKS</h2>
+  <p class="book-copy">Explore books by Dr. Joe Evans and stay connected for more.</p>
+
+  <div class="book-grid">
+    <div class="book-cover">
+      <a href="https://www.barnesandnoble.com/w/from-the-hood-to-the-hood-dr-joe-evans/1150070098?ean=9798256345099" target="_blank" rel="noopener noreferrer">
+        <img src="dad-book.PNG" alt="From the Hood to the Hood by Dr. Joe Evans">
+      </a>
+      <div class="book-actions">
+        <a class="buy-now-btn" href="https://www.amazon.com/dp/B0GT3QD95L" target="_blank" rel="noopener noreferrer">AMAZON</a>
+        <a class="buy-now-btn" href="https://www.barnesandnoble.com/w/from-the-hood-to-the-hood-dr-joe-evans/1150070098?ean=9798256345099" target="_blank" rel="noopener noreferrer">BARNES &amp; NOBLE</a>
+      </div>
+    </div>
+
+    <div class="book-cover">
+      <a href="https://www.barnesandnoble.com/w/conquer-math-conquer-fear-dr-joe-evans/1151122826?ean=9798995163022" target="_blank" rel="noopener noreferrer">
+        <img src="conquer-math-conquer-fear.jpg" alt="Conquer Math, Conquer Fear by Dr. Joe Evans">
+      </a>
+      <div class="book-actions">
+        <a class="buy-now-btn" href="https://www.amazon.com/dp/B0HDFZ8M1R" target="_blank" rel="noopener noreferrer">AMAZON</a>
+        <a class="buy-now-btn" href="https://www.barnesandnoble.com/w/conquer-math-conquer-fear-dr-joe-evans/1151122826?ean=9798995163022" target="_blank" rel="noopener noreferrer">BARNES &amp; NOBLE</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="consult-section" id="consult">
+  <h2>Consultation Request</h2>
+
+  <p>Interested in scheduling a consultation? Complete the form below and we will follow up shortly.</p>
+
+  <a class="consult-phone" href="tel:3025592200">(302) 559-2200</a>
+
+  <form class="consult-form" action="https://formspree.io/f/xwvnjyaw" method="POST">
+
+    <input type="hidden" name="_redirect" value="https://drjoeevans.com/thank-you.html">
+
+    <input type="text" name="name" placeholder="Full Name" required>
+
+    <input type="email" name="email" placeholder="Email Address" required>
+
+    <input type="text" name="organization" placeholder="Organization (Optional)">
+
+    <textarea name="message" rows="5" placeholder="Briefly describe your consultation needs" required></textarea>
+
+    <button type="submit">SUBMIT REQUEST</button>
+
+  </form>
+</section>
+
+<footer>
+  <a href="https://www.linkedin.com/in/dr-joe-evans-7958a165" target="_blank" class="linkedin-button">LinkedIn</a>
+
+  <a class="footer-phone" href="tel:3025592200">(302) 559-2200</a>
+
+  <p style="letter-spacing:6px;font-weight:900;">DR. JOE EVANS</p>
+
+  <p style="margin-top:20px;font-size:12px;opacity:0.7;">© 2026 Dr. Joe Evans. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
