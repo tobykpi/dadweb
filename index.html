@@ -469,6 +469,189 @@ nav ul{
   margin-top:0;
 }
 
+/* PUBLISHING FEATURE */
+.publisher-info{
+  max-width:1040px;
+  margin:80px auto 0;
+  padding:42px;
+  display:grid;
+  grid-template-columns:1fr 1.05fr;
+  gap:38px;
+  align-items:center;
+  text-align:left;
+  color:#fff;
+  background:radial-gradient(ellipse at top left,rgba(201,162,39,0.18),transparent 65%),#101114;
+  border:1px solid rgba(201,162,39,0.4);
+  border-radius:24px;
+  box-shadow:0 22px 55px rgba(0,0,0,0.16),0 0 30px rgba(201,162,39,0.08);
+}
+
+.publisher-eyebrow{
+  display:block;
+  color:#e3c56b;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:2.4px;
+  line-height:1.8;
+  text-transform:uppercase;
+  margin-bottom:14px;
+}
+
+.publisher-info h3{
+  font-size:clamp(28px,3vw,38px);
+  line-height:1.15;
+  letter-spacing:-1px;
+  margin-bottom:12px;
+  color:#fff;
+}
+
+.publisher-info .publisher-name{
+  color:#e3c56b;
+  font-size:13px;
+  line-height:1.7;
+  margin-bottom:20px;
+}
+
+.publisher-description{
+  color:#c6c6c8;
+  font-size:15px;
+  line-height:1.85;
+  margin-bottom:26px;
+}
+
+.publisher-cta{
+  position:relative;
+  isolation:isolate;
+  display:inline-flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:22px;
+  overflow:hidden;
+  padding:17px 22px;
+  border-radius:10px;
+  border:1px solid #f5d67c;
+  background:linear-gradient(110deg,#c9a227,#f1d37a);
+  color:#171309;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:1px;
+  line-height:1.5;
+  box-shadow:0 0 22px rgba(201,162,39,0.35),0 8px 22px rgba(0,0,0,0.22);
+  transition:transform 0.3s,box-shadow 0.3s;
+}
+
+.publisher-cta::before{
+  content:"";
+  position:absolute;
+  inset:-50% auto -50% -70%;
+  width:45%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.75),transparent);
+  transform:skewX(-20deg);
+  transition:left 0.65s ease;
+  pointer-events:none;
+  z-index:-1;
+}
+
+.publisher-cta:hover,
+.publisher-cta:focus-visible{
+  color:#171309;
+  transform:translateY(-3px);
+  box-shadow:0 0 35px rgba(226,188,67,0.65),0 12px 28px rgba(0,0,0,0.3);
+}
+
+.publisher-cta:hover::before,
+.publisher-cta:focus-visible::before{
+  left:130%;
+}
+
+.publisher-cta .publisher-arrow{
+  font-size:22px;
+  transition:transform 0.3s;
+}
+
+.publisher-cta:hover .publisher-arrow,
+.publisher-cta:focus-visible .publisher-arrow{
+  transform:translateX(4px);
+}
+
+.publisher-preview{
+  display:block;
+  min-width:0;
+  overflow:hidden;
+  border:1px solid rgba(227,197,107,0.35);
+  border-radius:12px;
+  background:#19212d;
+  box-shadow:0 18px 34px rgba(0,0,0,0.4);
+  transition:transform 0.3s,border-color 0.3s;
+}
+
+.publisher-preview:hover{
+  transform:translateY(-4px);
+  border-color:#e3c56b;
+}
+
+.publisher-cta:focus-visible,
+.publisher-preview:focus-visible{
+  outline:3px solid #f5d67c;
+  outline-offset:5px;
+}
+
+.publisher-browser-bar{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px 16px;
+  color:#d6d9df;
+  font-size:11px;
+  letter-spacing:0.3px;
+}
+
+.publisher-browser-dots{
+  color:#e3c56b;
+  letter-spacing:3px;
+}
+
+.publisher-preview img{
+  width:100%;
+  height:auto;
+}
+
+.publisher-preview-caption{
+  display:flex;
+  justify-content:space-between;
+  padding:13px 16px;
+  color:#e3c56b;
+  font-size:11px;
+  font-weight:500;
+}
+
+@media(max-width:800px){
+  .publisher-info{
+    grid-template-columns:1fr;
+    padding:28px;
+    gap:30px;
+    margin-top:60px;
+  }
+}
+
+@media(max-width:400px){
+  .publisher-info{padding:22px;}
+  .publisher-cta{width:100%;gap:12px;padding:15px;}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .publisher-cta,
+  .publisher-cta::before,
+  .publisher-cta .publisher-arrow,
+  .publisher-preview{transition:none;}
+  .publisher-cta::before{display:none;}
+  .publisher-cta:hover,
+  .publisher-cta:focus-visible,
+  .publisher-cta:hover .publisher-arrow,
+  .publisher-cta:focus-visible .publisher-arrow,
+  .publisher-preview:hover{transform:none;}
+}
+
 /* CONSULT SECTION */
 
 .consult-section{
@@ -839,6 +1022,23 @@ footer{
       </div>
     </div>
   </div>
+  <aside class="publisher-info" aria-labelledby="publisher-title">
+    <div class="publisher-content">
+      <span class="publisher-eyebrow">Dr. Joe Evans' publishing company</span>
+      <h3 id="publisher-title">EMH Publishing</h3>
+      <p class="publisher-name">Evans, Mitchell, &amp; Hudson Publishing</p>
+      <p class="publisher-description">Great ideas deserve to be read. Discover Dr. Evans' publishing company, helping bring scholarly research and meaningful nonfiction from the manuscript to a wider audience.</p>
+      <a class="publisher-cta" href="https://emhpublishing.com" target="_blank" rel="noopener noreferrer">
+        <span>EXPLORE EMH PUBLISHING</span>
+        <span class="publisher-arrow" aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+    <a class="publisher-preview" href="https://emhpublishing.com" target="_blank" rel="noopener noreferrer" aria-label="Visit EMH Publishing (opens in a new tab)">
+      <span class="publisher-browser-bar"><span class="publisher-browser-dots" aria-hidden="true">&bull;&bull;&bull;</span> emhpublishing.com</span>
+      <img src="emh-publishing-preview.png" alt="EMH Publishing homepage featuring Evans, Mitchell, &amp; Hudson Publishing and its dissertation-to-book publishing focus" width="1440" height="1000" loading="lazy">
+      <span class="publisher-preview-caption">A look inside EMH Publishing <span aria-hidden="true">&#8599;</span></span>
+    </a>
+  </aside>
 </section>
 
 <section class="consult-section" id="consult">
